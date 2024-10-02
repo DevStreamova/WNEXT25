@@ -11,7 +11,7 @@ body, html {
 #image-container {
     width: 100%;
     height: 100%;
-    background-image: url('/or.jpg'); /* Se actualizará desde el JS */
+    background-image: url('or.jpg'); /* Se actualizará desde el JS */
     background-size: cover;
     background-position: center;
     position: relative; /* Añadir posición relativa para posicionar el contenido hijo */
