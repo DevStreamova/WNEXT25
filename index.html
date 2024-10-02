@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WNEXT25</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="image-container">
+        <a href="Juego.html"><img src="/Captura_preview_rev_1.png" alt="Imagen Captura" id="overlay-image"></a>
+        <img style="width: 200px; margin-top: -500px; margin-left: 300px; transform: rotate(45deg);" src="/scroll-down.gif" alt="Imagen Captura" id="overlay-image">
+        <img style="width: 200px; margin-top: -500px; margin-left: -600px; transform: rotate(-45deg);" src="/scroll-down.gif" alt="Imagen Captura" id="overlay-image">
+    </div>
+
+    <!-- Añadiendo dos elementos de audio -->
+    <audio id="audio1" src="/y2mate.com - WiDE AWAKE  Love Me feat Jacob Banks_320kbps.mp3" loop></audio>
+    <audio id="audio2" src="/y2mate.com - Latin Fashion Trap by Infraction No Copyright Music  Latin Fusion_320.mp3" loop></audio>
+
+    <script>
+        // Función para reproducir ambas canciones al cargar la página
+        window.onload = function() {
+            const audio1 = document.getElementById('audio1');
+            const audio2 = document.getElementById('audio2');
+
+            audio1.play();
+            audio2.play();
+
+        };
+    </script>
+</body>
+</html>
