@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WNEXT25</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/imagenes/logo.PNG" type="image/x-icon">
+</head>
+<body>
+    <div id="image-container">
+        <a href="cargando.html"><img style="width: 185px;" src="/imagenes/play.png" alt="Imagen Captura" id="overlay-image"></a>
+        <img style="width: 200px; margin-top: -500px; margin-left: 300px; transform: rotate(45deg);" src="/Recursos/scroll-down.gif" alt="Imagen Captura" id="overlay-image">
+        <img style="width: 200px; margin-top: -500px; margin-left: -600px; transform: rotate(-45deg);" src="/Recursos/scroll-down.gif" alt="Imagen Captura" id="overlay-image">
+    </div>
+
+    <!-- Añadiendo dos elementos de audio -->
+    <audio id="audio1" src="/music/y2mate.com - Latin Fashion Trap by Infraction No Copyright Music  Latin Fusion_320.mp3" loop></audio>
+    <audio id="audio2" src="/music/y2mate.com - WiDE AWAKE  Love Me feat Jacob Banks_320kbps.mp3" loop></audio>
+
+    <script>
+        // Detectar scroll para iniciar la música
+        window.addEventListener('scroll', function() {
+            const audio1 = document.getElementById('audio1');
+            const audio2 = document.getElementById('audio2');
+
+            // Reanudar los audios desde el tiempo almacenado si existe
+            const audio1Time = localStorage.getItem('audio1-time');
+            const audio2Time = localStorage.getItem('audio2-time');
+
+            if (audio1Time) {
+                audio1.currentTime = parseFloat(audio1Time);
+            }
+            if (audio2Time) {
+                audio2.currentTime = parseFloat(audio2Time);
+            }
+
+            // Reproducir los audios
+            audio1.play();
+            audio2.play();
+
+            // Guardar el tiempo actual cada segundo
+            setInterval(() => {
+                localStorage.setItem('audio1-time', audio1.currentTime);
+                localStorage.setItem('audio2-time', audio2.currentTime);
+            }, 1000);
+        }, { once: true }); // Se ejecuta solo la primera vez que se haga scroll
+    </script>
+</body>
+</html>
